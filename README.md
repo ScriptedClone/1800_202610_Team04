@@ -68,6 +68,7 @@ elmo-hikes/
 ## Contributors
 - **Tracee Miasco** - BCIT CST Student with a passion for designing systems that solves problems.
 - **Shamym Ramadhan** - BCIT CST Student, Frontend enthusiast with a knack for creative design. Fun fact: Has a collection of over 50 houseplants.
+- **Daniel Berruti Bueno** - BCIT CST Student with an interest in programming and building projectws from the ground up.
 
 ---
 
