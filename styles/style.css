@@ -1,1 +1,19 @@
+:root {
+    --light-text: #B7D5D4;
+
+    --primary: #305252;
+    --secondary: #488286;
+
+    --accent: #373E40;
+}
+
+body {
+    background-color: var(--light-text);
+    color: var(--primary);
+}
+
+.navbar-custom {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
 
