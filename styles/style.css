@@ -14,6 +14,10 @@ body {
 
 .navbar-custom {
     background-color: var(--secondary);
+}
+
+ footer{
     color: var(--primary);
+    bottom:0%;
 }
 
