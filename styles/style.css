@@ -16,4 +16,9 @@ body {
     background-color: var(--secondary);
     color: var(--primary);
 }
-
+footer{
+   .navbar-custom {
+    background-color: var(--secondary);
+    color: var(--primary);
+   }
+}
