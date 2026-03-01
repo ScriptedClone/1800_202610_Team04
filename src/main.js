@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 // If you have custom global styles, import them as well:
 import '../styles/style.css';
+import '../styles/root.css';
 
 function sayHello() {
 
