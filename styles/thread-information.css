@@ -1,0 +1,55 @@
+/*
+--light-text: #535353;
+--primary: #1f1f1f;
+--secondary: #2b2b2b;
+--accent: #7a7a7a;
+*/
+body {
+    background-image: url("../images/chatboxBG.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div p {
+    margin: 0;
+}
+
+.header-custom {
+    background-color: var(--secondary);
+}
+
+.header-title-custom {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.thread-icon-custom {
+    width: 8rem;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.information-box-top {
+    background-color: var(--secondary);
+    border-radius: 5px;
+    flex: 0 0 calc(33.333% - 0.166rem);
+}
+
+.information-box {
+    background-color: var(--secondary);
+    border-radius: 5px;
+}
+
+.member-row {
+    background-color: var(--secondary);
+    border-radius: 5px;
+}
+.member-icon {
+    width: 2rem;
+}

@@ -3,7 +3,7 @@
 }
 
 .header-icon-custom {
-    height: 32px;
+    height: 2rem;
 }
 
 .chatbox-custom-bg {
@@ -38,5 +38,4 @@
 .icon-img {
     filter: invert();
     width: 40px;
-    height: 40px;
 }
