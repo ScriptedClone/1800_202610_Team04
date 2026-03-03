@@ -1,23 +1,11 @@
-:root {
-    --light-text: #B7D5D4;
-
-    --primary: #305252;
-    --secondary: #488286;
-
-    --accent: #373E40;
-}
-
 body {
     background-color: var(--light-text);
     color: var(--primary);
+    margin: 0;
+    min-height: 100vh;
 }
 
 .navbar-custom {
     background-color: var(--secondary);
-}
-
- footer{
     color: var(--primary);
-    bottom:0%;
 }
-
