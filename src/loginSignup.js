@@ -8,11 +8,6 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
-import {
-    loginUser,
-    signupUser,
-    authErrorMessage,
-} from './authentication.js';
 
 
 // --- Login and Signup Page ---
@@ -89,9 +84,13 @@ function initAuthUI() {
         }
         setSubmitDisabled(loginForm, true);
         try {
+            const { loginUser, authErrorMessage } = await import('./authentication.js');
             await loginUser(email, password);
             location.href = redirectUrl;
         } catch (err) {
+            const { authErrorMessage } = await import('./authentication.js').catch(() => ({
+                authErrorMessage: () => 'Authentication is not configured yet.',
+            }));
             showError(authErrorMessage(err));
             console.error(err);
         } finally {
@@ -112,9 +111,13 @@ function initAuthUI() {
         }
         setSubmitDisabled(signupForm, true);
         try {
+            const { signupUser, authErrorMessage } = await import('./authentication.js');
             await signupUser(name, email, password);
             location.href = redirectUrl;
         } catch (err) {
+            const { authErrorMessage } = await import('./authentication.js').catch(() => ({
+                authErrorMessage: () => 'Authentication is not configured yet.',
+            }));
             showError(authErrorMessage(err));
             console.error(err);
         } finally {
