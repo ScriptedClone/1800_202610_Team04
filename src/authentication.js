@@ -68,7 +68,7 @@ export async function signupUser(name, email, password) {
       name: name,
       email: email,
       region: "", // Empty string as default value for region
-      games: ""   // Empty string as default value for games
+      games: []   // Empty array as default value for selected games
     });
     console.log("Firestore user document created successfully!");
 } catch (error) {

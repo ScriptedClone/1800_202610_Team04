@@ -24,7 +24,8 @@ function initAuthUI() {
     const toLoginBtn = document.getElementById('toLogin');
     const loginForm = document.getElementById('loginForm');
     const signupForm = document.getElementById('signupForm');
-    const redirectUrl = 'main.html';
+    const redirectUrl = 'thread.html';
+    const redirectSignUp = 'region-selection.html';
 
     // --- Helper Functions ---
     // Toggle element visibility
@@ -113,7 +114,7 @@ function initAuthUI() {
         try {
             const { signupUser, authErrorMessage } = await import('./authentication.js');
             await signupUser(name, email, password);
-            location.href = redirectUrl;
+            location.href = redirectSignUp;
         } catch (err) {
             const { authErrorMessage } = await import('./authentication.js').catch(() => ({
                 authErrorMessage: () => 'Authentication is not configured yet.',
