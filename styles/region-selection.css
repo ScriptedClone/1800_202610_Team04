@@ -1,0 +1,22 @@
+body {
+    background-image: url("../images/chatboxBG.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.background-custom {
+    background-color: var(--secondary);
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.flag-img-custom-1 {
+    height: 8rem;
+}
+
+.flag-img-custom-2 {
+    height: 6.2rem;
+}
