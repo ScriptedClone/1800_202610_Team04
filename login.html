@@ -19,16 +19,9 @@
 
     <!-- Stuff for body goes here -->
     <nav class="navbar navbar-custom">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img
-            src="./images/TemporaryBrand.png"
-            alt="Logo"
-            width= "45"
-            height="39"
-            class="d-inline-block align-text-top"
-          />
-          TouristForum
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a class="header-icon-link" href="#">
+          <img class="header-icon" src="./images/menu.png" alt="Menu" width="36" height="36" />
         </a>
         <a class="header-icon-link" href="#">
           <img class="header-icon" src="./images/account.png" alt="Profile" width="36" height="36" />
@@ -36,27 +29,91 @@
       </div>
     </nav>
 
-    <div class="container mt-5">
-      <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">Welcome to TouristForum</h1>
-          <p class="col-md-8 fs-4">
-            Discover destinations, share travel stories, and connect with fellow explorers.
-          </p>
-          <button class="btn btn-primary btn-lg" type="button">
-            Explore Now
+    <div class="container py-5" style="max-width: 420px">
+      <!-- Alerts -->
+      <div id="authAlert" class="alert alert-danger d-none" role="alert"></div>
+
+      <!-- Login -->
+      <div id="loginView">
+        <h3 class="mb-3 text-center">Login</h3>
+        <form id="loginForm" novalidate>
+          <div class="mb-3">
+            <input
+              type="email"
+              id="loginEmail"
+              class="form-control"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="password"
+              id="loginPassword"
+              class="form-control"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+        <small class="d-block mt-3 text-center">
+          Don’t have an account?
+          <a href="#" id="toSignup">Sign up</a>
+        </small>
+      </div>
+
+      <!-- Signup -->
+      <div id="signupView" class="d-none">
+        <h3 class="mb-3 text-center">Sign Up</h3>
+        <form id="signupForm" novalidate>
+          <div class="mb-3">
+            <input
+              type="text"
+              id="signupName"
+              class="form-control"
+              placeholder="First and Last Name"
+              aria-label="Full name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="email"
+              id="signupEmail"
+              class="form-control"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="password"
+              id="signupPassword"
+              class="form-control"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-success w-100">
+            Create Account
           </button>
+<<<<<<< HEAD
         </div>
     
+=======
+        </form>
+        <small class="d-block mt-3 text-center">
+          Already have an account?
+          <a href="#" id="toLogin">Login</a>
+        </small>
+      </div>
+    </div>
+>>>>>>> d4b5bad26204537ef58b62d95b90d9aa173dfb99
 
     <!--Footer Icons and Buttons-->
     <div class="fixed-bottom">
       <footer class="app-footer navbar-custom">
-
-        <!--Gear Icon | gear.png-->
-        <a class="footer-icon-link" href="#" aria-label="Home">
-          <img class="footer-icon" src="images/gear.png" alt="Profile icon">
-        </a>
 
         <!--Home Icon | home.png-->
         <a class="footer-icon-link" href="#" aria-label="Explore">
@@ -68,27 +125,22 @@
           <img class="footer-icon" src="images/chat.png" alt="Profile icon">
         </a>
 
-        <!--Grid Icon | grid.png-->
-        <a class="footer-icon-link" href="#" aria-label="Profile">
-          <img class="footer-icon" src="images/grid.png" alt="Profile icon">
-        </a>
-
         <!--Account Icon | user.png-->
         <a class="footer-icon-link" href="#" aria-label="Profile">
           <img class="footer-icon" src="images/user.png" alt="Profile icon">
         </a>
       </footer>
     </div>
-     <div id = "message" style ="margin-top:10px;"></div>
-
-    
+    <div id="message" style="margin-top: 10px"></div>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
+    <script type="module" src="/src/firebaseConfig.js"></script>
+    <script type="module" src="/src/authentication.js"></script>
+    <script type="module" src="/src/loginSignup.js"></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-
