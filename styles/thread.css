@@ -1,4 +1,5 @@
-.header-custom, .footer-custom {
+.header-custom,
+.footer-custom {
     background-color: var(--secondary);
 }
 
@@ -18,24 +19,32 @@
     width: 40px;
 }
 
-.chat-bubble{
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  background-color: #eee;
-  max-width: 60%;
+.chat-bubble {
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    background-color: #eee;
+    max-width: 60%;
 }
 
 .icon-btn {
-  background: transparent;  
-  border: none;             
-  padding: 0;               
-  cursor: pointer;          
-  display: inline-flex;     
-  align-items: center;
-  justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .icon-img {
     filter: invert();
     width: 40px;
+}
+
+.chat-rating {
+    display: inline-block;
+    margin-left: .5rem;
+    font-size: .9em;
+    color: #ffd700;
+    /* gold stars */
 }
