@@ -92,6 +92,62 @@
 
       </footer>
     </div>
+<div
+  class="modal fade"
+  id="threadScorePopup"
+  tabindex="-1"
+  aria-labelledby="threadScoreTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content score-popup">
+      
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title" id="threadScoreTitle">Rate this thread</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body pt-2">
+        <p class="mb-3">Pick a number from 1 to 5.</p>
+
+        <div class="score-buttons" id="threadScoreButtons" role="radiogroup" aria-label="Thread score">
+          <button type="button" class="score-btn" data-score="1">1</button>
+          <button type="button" class="score-btn" data-score="2">2</button>
+          <button type="button" class="score-btn" data-score="3">3</button>
+          <button type="button" class="score-btn" data-score="4">4</button>
+          <button type="button" class="score-btn" data-score="5">5</button>
+        </div>
+
+        <p class="score-msg text-success small mt-3 mb-0" id="threadScoreMsg"></p>
+      </div>
+
+      <div class="modal-footer border-0 pt-0">
+        <button
+          type="button"
+          class="btn btn-outline-light"
+          data-bs-dismiss="modal"
+        >
+          Maybe later
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-light"
+          id="saveThreadScore"
+          disabled
+        >
+          Save rating
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
     <script type="module" src="./src/main.js"></script>
   </body>
