@@ -3,7 +3,7 @@
 }
 
 .header-icon-custom {
-    height: 2rem;
+    height: 3rem;
 }
 
 .chatbox-custom-bg {
@@ -38,4 +38,12 @@
 .icon-img {
     filter: invert();
     width: 40px;
+}
+
+.thread-info-btn {
+    all: unset;
+}
+
+.thread-info-btn:active {
+    color: black;
 }

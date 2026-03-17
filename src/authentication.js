@@ -73,7 +73,6 @@ export async function signupUser(name, email, password) {
       email: email,
       region: "", // Empty string as default value for region
       games: [], //empty array
-      rate: "", // Empty string as default value for selected games
     });
     console.log("Firestore user document created successfully!");
   } catch (error) {
@@ -163,4 +162,17 @@ export function authErrorMessage(error) {
   };
 
   return map[code] || "Something went wrong. Please try again.";
+}
+
+// -------------------------------------------------------------
+// getUserObject()
+// -------------------------------------------------------------
+// gets the user object from firebase using onAuthReady callback 
+// and returns it to caller .
+export function getUserObject(){
+  return new Promise(resolve =>{
+    onAuthReady((user) => {
+      resolve(user);
+    });
+  })
 }

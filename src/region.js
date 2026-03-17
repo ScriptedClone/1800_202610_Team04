@@ -1,11 +1,6 @@
 import { db } from "/src/firebaseConfig.js";
 import { doc, updateDoc } from "firebase/firestore";
-import { auth } from "/src/firebaseConfig.js";
-import { onAuthStateChanged } from "firebase/auth";
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
-
+import {onAuthReady} from "./authentication.js"
 
 function regionSelect() {
 
@@ -13,7 +8,7 @@ function regionSelect() {
     const easternHemisphere = document.getElementById('easternHemisphereBtn');
     const redirectGameSelection = 'game-selection.html';
 
-    onAuthStateChanged(auth, (user) => {
+    onAuthReady((user) => {
 
         westernHemisphere.addEventListener('click', async () => {
             await updateDoc(doc(db, "users", user.uid), {
