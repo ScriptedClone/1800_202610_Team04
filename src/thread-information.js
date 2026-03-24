@@ -86,3 +86,5 @@ async function updateThreadInfo() {
     console.error("Error updating thread info:", error);
   }
 }
+
+updateThreadInfo();
