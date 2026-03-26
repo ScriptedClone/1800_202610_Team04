@@ -10,48 +10,22 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-custom">
-      <div class="container-fluid d-flex justify-content-center  align-items-center">
-        <h1>FIFA SQUAD</h1>
+    <header class="header header-custom">
+      <div class="container-fluid d-flex text-white justify-content-center align-items-center">
+        <h1 class="display-4 my-3">FIFA SQUAD</h1>
       </div>
-    </nav>
+    </header>
 
     <main>
-      <h1>FIND YOUR SQUAD</h1>
-
-      <div id="threads-container">
-        <div class="d-flex">
-          <img class="icon-img" src="./images/country_icons/canada.png">
-          <p>Canada vs Qatar</p>
-          <button></button>
-        </div>
+      <h2 class="mt-4 mb-0 px-3 text-white">FIND YOUR SQUAD</h2>
+      <div id="threads-container" class="d-flex flex-column">
       </div>
-
-
     </main>
-    
 
-    <!--Footer Icons and Buttons-->
-    <div class="fixed-bottom">
-      <footer class="app-footer navbar-custom">
-
-        <!--Home Icon | home.png-->
-        <a class="footer-icon-link" href="#" aria-label="Explore">
-          <img class="footer-icon" src="images/home.png" alt="Profile icon">
-        </a>
-
-        <!--Chat Icon | chat.png-->
-        <a class="footer-icon-link" href="#" aria-label="Saved">
-          <img class="footer-icon" src="images/chat.png" alt="Profile icon">
-        </a>
-
-        <!--Account Icon | user.png-->
-        <a class="footer-icon-link" href="#" aria-label="Profile">
-          <img class="footer-icon" src="images/user.png" alt="Profile icon">
-        </a>
-      </footer>
-    </div>
+    <site-navbar></site-navbar>
 
     <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/components/site-navbar.js"></script>
+    <script type="module" src="./src/other-threads.js"></script>
   </body>
 </html>

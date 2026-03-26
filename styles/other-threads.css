@@ -1,3 +1,14 @@
 .icon-img {
     height: 3rem;
 }
+
+body{
+    background-image: url("../images/chatboxBG.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.threads-bg {
+    background-color: var(--secondary);
+}

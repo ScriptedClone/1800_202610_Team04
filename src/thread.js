@@ -19,7 +19,7 @@ function userFlag(userRegion, userGames){
         switch (userGames) {
             case "CA-QA":
                 flag = "./images/country_icons/canada.png"
-                break;
+                break;g
             case "CA-SW":
                 flag = "./images/country_icons/canada.png"
                 break;
@@ -27,7 +27,7 @@ function userFlag(userRegion, userGames){
                 flag = "./images/country_icons/new-zealand.png"
                 break;
             case "NZ-EG":
-                flag = "./imagescountry_icons/new-zealand.png"
+                flag = "./images/country_icons/new-zealand.png"
                 break;
         }
     } else if (userRegion === "east") {
@@ -83,9 +83,7 @@ async function renderHeader(eventDocRef, userGames, userRegion) {
 
     let flag = userFlag(userRegion, userGames);
 
-    container.innerHTML = `
-    
-    <div class="me-3">←</div>
+    container.innerHTML += `
     <img
       src=${flag}
       class="header-icon-custom me-3"
@@ -99,9 +97,14 @@ async function renderHeader(eventDocRef, userGames, userRegion) {
 
     //Redirects user to thread-information using the header as a button.
     const threadInformationBtn = document.getElementById('thread-information-btn')
-    const redirect = 'thread-information.html'
     threadInformationBtn?.addEventListener('click', (e) => {
-        location.href = redirect;
+        location.href = 'thread-information.html';
+    });
+
+    const backBtn = document.getElementById('back-btn')
+    //const redirect = 'other-threads.html'
+    backBtn?.addEventListener('click', (e) => {
+        location.href = "other-threads.html";
     });
 
 }
@@ -134,13 +137,8 @@ function renderRegionMessage(eventDocRef, userRegion, user) {
                                 <p class="chat-bubble">${data.message}</p>
                             </div>
                             `;
-                            //console.log("user's message");
 
                         } else {
-
-                            //Stores the user that created the current document
-                            //const otherUserName =
-
                             container.innerHTML += `
                             <div class="d-flex justify-content-start gap-3 align-items-center">
                                 <img src="./images/account.png" class="chat-icon" />
@@ -150,7 +148,6 @@ function renderRegionMessage(eventDocRef, userRegion, user) {
                                 </div>
                             </div>
                             `;
-                            //console.log("other user's message");
                         }
                     }
                 }
@@ -202,19 +199,33 @@ async function initThreadUI() {
     const userData = userDoc.data();
     const userName = userData.name;
     const userRegion = userData.region;  //ex: west
-    const userGames = userData.games[0]; //ex: CA-QA 
 
-    //gets a referece to document inside the events collection 
-    //depending on what game the user selected.
-    const eventDocRef = doc(db, "events", userGames);
+    // this needs to be changed.
+    const userGames = userData.games;
 
-    //gets every document from the event subcollection
-    //const docsRef = query(eventSubColRef);
 
-    seedThread(eventDocRef, userRegion);
-    renderHeader(eventDocRef, userGames, userRegion);
-    renderRegionMessage(eventDocRef, userRegion, user);
-    sendMessage(eventDocRef, userRegion, userName, user);
+    if (userGames.length === 1){
+
+        //gets a referece to document inside the events collection 
+        //depending on what game the user selected.
+        const eventDocRef = doc(db, "events", userGames[0]);
+
+        seedThread(eventDocRef, userRegion);
+        renderHeader(eventDocRef, userGames[0], userRegion);
+        renderRegionMessage(eventDocRef, userRegion, user);
+        sendMessage(eventDocRef, userRegion, userName, user);
+
+    } else {
+
+        const userGame = localStorage.getItem('selectedThread')
+
+        const eventDocRef = doc(db, "events", userGame);
+
+        seedThread(eventDocRef, userRegion);
+        renderHeader(eventDocRef, userGame, userRegion);
+        renderRegionMessage(eventDocRef, userRegion, user);
+        sendMessage(eventDocRef, userRegion, userName, user);
+    }
 }
 
 initThreadUI(); 
