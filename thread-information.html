@@ -3,7 +3,6 @@
   <head>
     <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App" />
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./styles/thread-information.css" />
@@ -14,13 +13,13 @@
     <header
       class="header-custom text-white d-flex align-items-center position-relative p-3"
     >
-      <div>←</div>
+      <button class="back-btn" aria-label="Go back">←</button>
       <div>
         <div class="header-title-custom fw-bold fs-5">group info</div>
       </div>
     </header>
 
-    <!-- thread name and region-->
+    <!-- Canada vs Croatia thread -->
     <div
       class="thread-name-region d-flex flex-column align-items-center text-white my-4"
     >
@@ -32,89 +31,336 @@
       <div class="fw-bold fs-5">Canada vs Croatia</div>
     </div>
 
-    <!-- first row -->
+    <!-- action buttons row -->
     <div class="d-flex w-90 mx-auto gap-1 mb-2">
       <div
         class="information-box-top d-flex flex-column align-items-center p-3 text-white"
       >
         <small>search</small>
       </div>
-
       <div
         class="information-box-top d-flex flex-column align-items-center p-3 text-white"
       >
         <small>add</small>
       </div>
       <div
-        id="spacing"
         class="information-box-top d-flex flex-column align-items-center p-3 text-white"
       >
         <small>photos</small>
       </div>
     </div>
 
-    <!-- second row -->
+    <!-- description -->
     <div class="w-90 mx-auto gap-1 mb-2">
       <div class="information-box p-3 text-white">
         <p>
           Welcome to Canada vs Croatia! Connect with people that are going to
-          the game on october 1, 2026!
+          the game on October 1, 2026!
         </p>
       </div>
     </div>
 
-    <!-- third row -->
-    <h1 class="w-90 mx-auto gap-1 mb-2 text-white">members</h1>
-    <div
+    <!-- members -->
+    <h2 class="w-90 mx-auto gap-1 mb-2 text-white">members</h2>
+    <ul
       class="member-row d-flex flex-column justify-content-start text-white w-90 mx-auto gap-1 mb-2"
     >
-      <div class="align">
-        <img class="member-icon" src="./images/account.png" />
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
         Tracee Anrei Miasco
-        <hr>
-      </div>
-      <div>
-        <img class="member-icon" src="./images/account.png" />
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
         Daniel Berutti
-        <hr>
-      </div>
-      <div>
-        <img class="member-icon" src="./images/account.png" />
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
         Shamym Ramadhan
-        <hr>
-      </div>
-      <div>
-        <img class="member-icon" src="./images/account.png" />
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
         John Pork
-        <hr>
-      </div>
-      <div>
-        <img class="member-icon" src="./images/account.png" />
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
         John Stockton
-        <hr>
-      </div>
-      <div>
-        <img class="member-icon" src="./images/account.png" />
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
         Michael Reeds
-        <hr>
-      </div>
-      <div>
-        <img class="member-icon" src="./images/account.png" />
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
         Michael Jordan
-        <hr>
-      </div>
-      <div>
-        <img class="member-icon" src="./images/account.png" />
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
         Joseph Stuart
-        <hr>
-      </div>
-      <div>
-        <img class="member-icon" src="./images/account.png" />
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
         Red Robin
-        <hr>
+        <hr />
+      </li>
+    </ul>
+
+    <!-- New Zealand vs Egypt thread -->
+    <div
+      class="thread-name-region d-flex flex-column align-items-center text-white my-4"
+    >
+      <img
+        src="./images/country_icons/egypt.png"
+        alt="Egypt flag"
+        class="thread-icon-custom"
+      />
+      <div class="fw-bold fs-5">New Zealand vs Egypt</div>
+    </div>
+
+    <!-- action buttons row -->
+    <div class="d-flex w-90 mx-auto gap-1 mb-2">
+      <div
+        class="information-box-top d-flex flex-column align-items-center p-3 text-white"
+      >
+        <small>search</small>
+      </div>
+      <div
+        class="information-box-top d-flex flex-column align-items-center p-3 text-white"
+      >
+        <small>add</small>
+      </div>
+      <div
+        class="information-box-top d-flex flex-column align-items-center p-3 text-white"
+      >
+        <small>photos</small>
       </div>
     </div>
 
+    <!-- description -->
+    <div class="w-90 mx-auto gap-1 mb-2">
+      <div class="information-box p-3 text-white">
+        <p>
+          Welcome to New Zealand vs Egypt! Connect with people that are going to
+          the game on October 17, 2026!
+        </p>
+      </div>
+    </div>
+
+    <!-- members -->
+    <h2 class="w-90 mx-auto gap-1 mb-2 text-white">members</h2>
+    <ul
+      class="member-row d-flex flex-column justify-content-start text-white w-90 mx-auto gap-1 mb-4"
+    >
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Aisha Alami
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Owen Te Puni
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Mia Hussein
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Kea Bradford
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Elias Muir
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Sara Omran
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Tane Whaanga
+        <hr />
+      </li>
+    </ul>
+
+    <!-- Canada vs Switzerland thread -->
+    <div
+      class="thread-name-region d-flex flex-column align-items-center text-white my-4"
+    >
+      <img
+        src="./images/country_icons/switzerland.png"
+        alt="Switzerland flag"
+        class="thread-icon-custom"
+      />
+      <div class="fw-bold fs-5">Canada vs Switzerland</div>
+    </div>
+
+    <!-- action buttons row -->
+    <div class="d-flex w-90 mx-auto gap-1 mb-2">
+      <div
+        class="information-box-top d-flex flex-column align-items-center p-3 text-white"
+      >
+        <small>search</small>
+      </div>
+      <div
+        class="information-box-top d-flex flex-column align-items-center p-3 text-white"
+      >
+        <small>add</small>
+      </div>
+      <div
+        class="information-box-top d-flex flex-column align-items-center p-3 text-white"
+      >
+        <small>photos</small>
+      </div>
+    </div>
+
+    <!-- description -->
+    <div class="w-90 mx-auto gap-1 mb-2">
+      <div class="information-box p-3 text-white">
+        <p>
+          Welcome to Canada vs Switzerland! Connect with people that are going
+          to the game on October 20, 2026!
+        </p>
+      </div>
+    </div>
+
+    <!-- members -->
+    <h2 class="w-90 mx-auto gap-1 mb-2 text-white">members</h2>
+    <ul
+      class="member-row d-flex flex-column justify-content-start text-white w-90 mx-auto gap-1 mb-4"
+    >
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Leonardo Dicaprio
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Brad Pitt
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        John Trevor
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Jace Norman
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Laura Omondi
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Jane Dota
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Tana Cathy
+        <hr />
+      </li>
+    </ul>
+    <!-- New Zealand vs Belgium thread -->
+    <div
+      class="thread-name-region d-flex flex-column align-items-center text-white my-4"
+    >
+      <img
+        src="./images/country_icons/new-zealand.png"
+        alt="New Zealand flag"
+        class="thread-icon-custom"
+      />
+      <div class="fw-bold fs-5">New Zealand vs Belgium</div>
+    </div>
+
+    <!-- action buttons row -->
+    <div class="d-flex w-90 mx-auto gap-1 mb-2">
+      <div
+        class="information-box-top d-flex flex-column align-items-center p-3 text-white"
+      >
+        <small>search</small>
+      </div>
+      <div
+        class="information-box-top d-flex flex-column align-items-center p-3 text-white"
+      >
+        <small>add</small>
+      </div>
+      <div
+        class="information-box-top d-flex flex-column align-items-center p-3 text-white"
+      >
+        <small>photos</small>
+      </div>
+    </div>
+
+    <!-- description -->
+    <div class="w-90 mx-auto gap-1 mb-2">
+      <div class="information-box p-3 text-white">
+        <p>
+          Welcome to New Zealand vs Belgium! Connect with people that are going
+          to the game on October 20, 2026!
+        </p>
+      </div>
+    </div>
+
+    <!-- members -->
+    <h2 class="w-90 mx-auto gap-1 mb-2 text-white">members</h2>
+    <ul
+      class="member-row d-flex flex-column justify-content-start text-white w-90 mx-auto gap-1 mb-4"
+    >
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Malikk Ibrahim
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Yasin Hussein
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Queen Elizabeth
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Emmanuel Jew
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Jasmine Alfaiz
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Ibrahim Hassan
+        <hr />
+      </li>
+      <li>
+        <img class="member-icon" src="./images/account.png" alt="member icon" />
+        Mahmoud Hussein
+        <hr />
+      </li>
+    </ul>
+
     <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/thread-information.js"></script>
   </body>
 </html>
