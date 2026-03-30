@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>My BCIT Project</title>
+    <meta name="comp1800 template" content="My 1800 App" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles/other-threads.css" />
+  </head>
+
+  <body>
+    <header class="header header-custom">
+      <div class="container-fluid d-flex text-white justify-content-center align-items-center">
+        <h1 class="display-4 my-3">FIFA SQUAD</h1>
+      </div>
+    </header>
+
+    <main>
+      <h2 class="mt-4 mb-0 px-3 text-white">FIND YOUR SQUAD</h2>
+      <div id="threads-container" class="d-flex flex-column">
+      </div>
+    </main>
+
+    <site-navbar></site-navbar>
+
+    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/components/site-navbar.js"></script>
+    <script type="module" src="./src/other-threads.js"></script>
+  </body>
+</html>

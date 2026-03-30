@@ -8,130 +8,103 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Other libraries go here -->
+    <link rel="stylesheet" href="./styles/login.css" />
   </head>
 
   <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-
-    <!-- Stuff for body goes here -->
-    <nav class="navbar navbar-custom">
-      <div class="container-fluid d-flex justify-content-between align-items-center">
-        <a class="header-icon-link" href="#">
-          <img class="header-icon" src="./images/menu.png" alt="Menu" width="36" height="36" />
-        </a>
-        <a class="header-icon-link" href="#">
-          <img class="header-icon" src="./images/account.png" alt="Profile" width="36" height="36" />
-        </a>
+    <header class="header header-custom">
+      <div
+        class="container-fluid d-flex text-white justify-content-center align-items-center"
+      >
+        <h1 class="display-4 my-3">FIFA SQUAD</h1>
       </div>
-    </nav>
+    </header>
 
-    <div class="container py-5" style="max-width: 420px">
-      <!-- Alerts -->
-      <div id="authAlert" class="alert alert-danger d-none" role="alert"></div>
+    <div class="bg-wrapper">
+      <img class="login-bg" src="../images/crowd.png" />
 
-      <!-- Login -->
-      <div id="loginView">
-        <h3 class="mb-3 text-center">Login</h3>
-        <form id="loginForm" novalidate>
-          <div class="mb-3">
-            <input
-              type="email"
-              id="loginEmail"
-              class="form-control"
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <input
-              type="password"
-              id="loginPassword"
-              class="form-control"
-              placeholder="Password"
-              required
-            />
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Login</button>
-        </form>
-        <small class="d-block mt-3 text-center">
-          Don’t have an account?
-          <a href="#" id="toSignup">Sign up</a>
-        </small>
-      </div>
+      <div class="container py-5" style="max-width: 420px">
+        <!-- Alerts -->
+        <div
+          id="authAlert"
+          class="alert alert-danger d-none"
+          role="alert"
+        ></div>
 
-      <!-- Signup -->
-      <div id="signupView" class="d-none">
-        <h3 class="mb-3 text-center">Sign Up</h3>
-        <form id="signupForm" novalidate>
-          <div class="mb-3">
-            <input
-              type="text"
-              id="signupName"
-              class="form-control"
-              placeholder="First and Last Name"
-              aria-label="Full name"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <input
-              type="email"
-              id="signupEmail"
-              class="form-control"
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <input
-              type="password"
-              id="signupPassword"
-              class="form-control"
-              placeholder="Password"
-              required
-            />
-          </div>
-          <button type="submit" class="btn btn-success w-100">
-            Create Account
-          </button>
-        </form>
-        <small class="d-block mt-3 text-center">
-          Already have an account?
-          <a href="#" id="toLogin">Login</a>
-        </small>
+        <!-- Login -->
+        <div id="loginView">
+          <h3 class="mb-3 text-center text-white">Login</h3>
+          <form id="loginForm" novalidate>
+            <div class="mb-3">
+              <input
+                type="email"
+                id="loginEmail"
+                class="form-control"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="password"
+                id="loginPassword"
+                class="form-control"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary text-white w-100">Login</button>
+          </form>
+          <small class="d-block text-white mt-3 text-center">
+            Don’t have an account?
+            <a href="#" id="toSignup">Sign up</a>
+          </small>
+        </div>
+
+        <!-- Signup -->
+        <div id="signupView" class="d-none">
+          <h3 class="mb-3 text-center text-white">Sign Up</h3>
+          <form id="signupForm" novalidate>
+            <div class="mb-3">
+              <input
+                type="text"
+                id="signupName"
+                class="form-control"
+                placeholder="First and Last Name"
+                aria-label="Full name"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="email"
+                id="signupEmail"
+                class="form-control"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="password"
+                id="signupPassword"
+                class="form-control"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-success w-100">
+              Create Account
+            </button>
+          </form>
+          <small class="d-block mt-3 text-white text-center">
+            Already have an account?
+            <a href="#" id="toLogin">Login</a>
+          </small>
+        </div>
       </div>
     </div>
 
-    <!--Footer Icons and Buttons-->
-    <div class="fixed-bottom">
-      <footer class="app-footer navbar-custom">
-
-        <!--Home Icon | home.png-->
-        <a class="footer-icon-link" href="#" aria-label="Explore">
-          <img class="footer-icon" src="images/home.png" alt="Profile icon">
-        </a>
-
-        <!--Chat Icon | chat.png-->
-        <a class="footer-icon-link" href="#" aria-label="Saved">
-          <img class="footer-icon" src="images/chat.png" alt="Profile icon">
-        </a>
-
-        <!--Account Icon | user.png-->
-        <a class="footer-icon-link" href="#" aria-label="Profile">
-          <img class="footer-icon" src="images/user.png" alt="Profile icon">
-        </a>
-      </footer>
-    </div>
-    <div id="message" style="margin-top: 10px"></div>
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
     <script type="module" src="/src/firebaseConfig.js"></script>
     <script type="module" src="/src/authentication.js"></script>
     <script type="module" src="/src/loginSignup.js"></script>

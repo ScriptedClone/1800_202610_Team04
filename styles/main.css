@@ -5,26 +5,18 @@ body {
     min-height: 100vh;
 }
 
-.navbar-custom {
+.header-custom {
     background-color: var(--secondary);
 }
 
-.navbar {
+.header {
     position: relative;
     z-index: 2;
 }
 
-.header-icon-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-}
-
 .hero-screen {
     position: relative;
-    min-height: calc(100vh - 140px);
+    min-height: calc(100vh - 75px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,9 +119,9 @@ body {
     justify-content: center;
     gap: 0.15rem;
     text-decoration: none;
-    color: var(--primary);
+    color: white;
     min-height: 56px;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 600;
 }
 

@@ -14,6 +14,7 @@ import "bootstrap";
 // using plain DOM APIs for simplicity and maintainability.
 
 function initAuthUI() {
+<<<<<<< HEAD
   // --- DOM Elements ---
   const alertEl = document.getElementById("authAlert");
   const loginView = document.getElementById("loginView");
@@ -24,6 +25,18 @@ function initAuthUI() {
   const signupForm = document.getElementById("signupForm");
   const redirectUrl = "thread.html";
   const redirectSignUp = "region-selection.html";
+=======
+    // --- DOM Elements ---
+    const alertEl = document.getElementById('authAlert');
+    const loginView = document.getElementById('loginView');
+    const signupView = document.getElementById('signupView');
+    const toSignupBtn = document.getElementById('toSignup');
+    const toLoginBtn = document.getElementById('toLogin');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const redirectUrl = 'other-threads.html';
+    const redirectSignUp = 'region-selection.html';
+>>>>>>> d3985f37b649c4e3cc82e87a1ca6bdf71f3022ef
 
   // --- Helper Functions ---
   // Toggle element visibility

@@ -11,7 +11,7 @@ async function renderEventFields() {
         const data = doc.data();
 
         container.innerHTML = `
-        <p class="">${data.name}</p>
+        <p>${data.name}</p>
         <p>${data.date}</p>
         <p>${data.time}</p>
         `;
@@ -33,8 +33,6 @@ function gameSelect() {
             await updateDoc(doc(db, "users", user.uid), { //This is the example use of doc import
                 games: arrayUnion("CA-QA")                //From firestore
             });
-
-
             location.href = redirect;
         });
         
