@@ -9,7 +9,7 @@ function regionSelect() {
     const switzerlandBtn = document.getElementById('switzerland-btn');
     const egyptBtn = document.getElementById('egypt-btn');
     const belgiumBtn = document.getElementById('belgium-btn');
-    const qatar = document.getElementById('qatar-btn');
+    const qatarBtn = document.getElementById('qatar-btn');
     const redirect = 'other-threads.html';
 
     onAuthReady((user) => {
@@ -20,7 +20,6 @@ function regionSelect() {
                 games: arrayUnion("CA-QA", "CA-SW")
             });
             location.href = redirect;
-            console.log("Region selected");
         });
 
         newZealandBtn.addEventListener('click', async () => {
@@ -28,40 +27,39 @@ function regionSelect() {
                 region: "west",
                 games: arrayUnion("NZ-EG", "NZ-BG")
             });
-            location.href = redirectGameSelection;
-            console.log("Region selected");
+            location.href = redirect;
         });
 
         switzerlandBtn.addEventListener('click', async () => {
             await updateDoc(doc(db, "users", user.uid), {
-                region: "west"
+                region: "east",
+                games: arrayUnion("CA-SW")
             });
             location.href = redirect;
-            console.log("Region selected");
         });
 
         egyptBtn.addEventListener('click', async () => {
             await updateDoc(doc(db, "users", user.uid), {
-                region: "east"
+                region: "east",
+                games: arrayUnion("NZ-EG")                
             });
-            location.href = redirectGameSelection;
-            console.log("Region selected");
+            location.href = redirect;
         });
 
         belgiumBtn.addEventListener('click', async () => {
             await updateDoc(doc(db, "users", user.uid), {
-                region: "west"
+                region: "east",
+                games: arrayUnion("NZ-BG")               
             });
             location.href = redirect;
-            console.log("Region selected");
         });
 
         qatarBtn.addEventListener('click', async () => {
             await updateDoc(doc(db, "users", user.uid), {
-                region: "east"
+                region: "east",
+                games: arrayUnion("CA-QA")                
             });
-            location.href = redirectGameSelection;
-            console.log("Region selected");
+            location.href = redirect;
         });
 
     });

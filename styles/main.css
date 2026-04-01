@@ -150,7 +150,9 @@ body {
     fill: currentColor;
 }
 
-#action-call-btn {
-    width: 2.3rem;
-    height: auto;
+.arrow-cta {
+    width: 1em;
+    height: 1em;
+    margin-left: .35em;
+    vertical-align: -0.2em;
 }
