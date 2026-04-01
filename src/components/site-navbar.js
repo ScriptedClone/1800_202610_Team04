@@ -13,7 +13,7 @@ class SiteNavbar extends HTMLElement {
                 <!--Chat Icon | chat.png-->
                 <a class="footer-icon-link" href="#" aria-label="Saved">
                   <img class="footer-icon" src="images/chat.png" alt="Profile icon">
-                  <span>find squad</span>
+                  <span>chats</span>
                 </a>
 
                 <!--profile Icon | account.png-->

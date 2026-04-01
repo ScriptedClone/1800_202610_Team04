@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>My BCIT Project</title>
+    <meta name="comp1800 template" content="My 1800 App" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles/country-selection.css" />
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <header class="header header-custom">
+      <div
+        class="container-fluid d-flex text-white justify-content-center align-items-center"
+      >
+        <h1 class="display-4 my-3">FIFA SQUAD</h1>
+      </div>
+    </header>
+
+    <!--content container-->
+    <div class="d-flex flex-column align-items-center text-white flex-grow-1">
+      <!--header-->
+      <div class="background-custom display-5 p-4 mt-4">
+        Select your country
+      </div>
+
+      <!--Western Hemisphere container-->
+      <div
+        class="background-custom d-flex flex-column w-90 mx-auto p-3 mt-4 flex-grow-1"
+      >
+        <!--Title-->
+        <div class="align-self-center">
+          <p></p>
+        </div>
+
+        <!--Country Buttons-->
+        <div class="d-flex justify-content-around">
+          <button class="btn btn-link p-0 border-0 bg-transparent shadow-none country-btn" id="canada-btn">
+            <img
+              src="./images/country_icons/canada.png"
+              class="flag-img-custom-1"
+            />
+          </button>
+          <button class="btn btn-link p-0 border-0 bg-transparent shadow-none country-btn" id="new-zealand-btn">
+            <img
+              src="./images/country_icons/new-zealand.png"
+              class="flag-img-custom-1"
+            />
+          </button>
+        </div>
+
+        <div class="d-flex justify-content-around">
+          <button class="btn btn-link p-0 border-0 bg-transparent shadow-none country-btn" id="belgium-btn">
+            <img
+              src="./images/country_icons/belgium.png"
+              class="flag-img-custom-1"
+            />
+          </button>
+          <button class="btn btn-link p-0 border-0 bg-transparent shadow-none country-btn" id="egypt-btn">
+            <img
+              src="./images/country_icons/Egypt.png"
+              class="flag-img-custom-1"
+            />
+          </button>
+        </div>
+
+        <div class="d-flex justify-content-around">
+          <button class="btn btn-link p-0 border-0 bg-transparent shadow-none country-btn" id="qatar-btn">
+            <img
+              src="./images/country_icons/qatar.png"
+              class="flag-img-custom-1"
+            />
+          </button>
+          <button class="btn btn-link p-0 border-0 bg-transparent shadow-none country-btn" id="switzerland-btn">
+            <img
+              src="./images/country_icons/switzerland.png"
+              class="flag-img-custom-1"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/app.js"></script>
+    <script type="module" src="./src/country-selection.js"></script>
+  </body>
+</html>
