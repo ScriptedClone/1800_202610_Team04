@@ -25,7 +25,7 @@ function initAuthUI() {
     const loginForm = document.getElementById('loginForm');
     const signupForm = document.getElementById('signupForm');
     const redirectUrl = 'other-threads.html';
-    const redirectSignUp = 'region-selection.html';
+    const redirectSignUp = 'country-selection.html';
 
     // --- Helper Functions ---
     // Toggle element visibility
