@@ -1,6 +1,49 @@
 :root {
-    --light-text: #535353;
-    --primary: #1f1f1f;
-    --secondary: #2b2b2b;
-    --accent: #7a7a7a;
+    --light-text: #0d1b2a;
+    /* dark navy — all pages bg */
+    --primary: #f0f4f8;
+    /* light text on dark bg */
+    --secondary: #0d1b2a;
+    /* header/footer navy */
+    --accent: #60a5fa;
+    /* blue highlight */
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--secondary);
+    color: var(--primary);
+    background-image: url('C:/Users/ramad/Downloads/omar-ramirez-guqMRDP5wjE-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.home-footer {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4.5rem;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.home-button {
+    display: inline-block;
+    pointer-events: auto;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: var(--primary);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-weight: 600;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.home-button:hover,
+.home-button:focus-visible {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }

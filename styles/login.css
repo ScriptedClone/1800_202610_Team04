@@ -1,9 +1,9 @@
-.bg-wrapper { 
+.bg-wrapper {
     position: relative;
     min-height: calc(100vh - 75px);
 }
 
-.bg-wrapper .login-bg{
+.bg-wrapper .login-bg {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -14,7 +14,7 @@
     z-index: 0;
 }
 
-.bg-wrapper .container{ 
-    position: relative; 
-    z-index: 1; 
+.bg-wrapper .container {
+    position: relative;
+    z-index: 1;
 }

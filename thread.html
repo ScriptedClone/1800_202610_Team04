@@ -7,38 +7,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./styles/thread.css" />
+    <link rel="stylesheet" href="./styles/root.css" />
   </head>
 
   <body>
     <div class="container-fluid vh-100 d-flex flex-column p-0">
-      
       <!-- header -->
-      <header id="header-container" class="header-custom text-white p-3 d-flex align-items-center">
+      <header
+        id="header-container"
+        class="header-custom text-white p-3 d-flex align-items-center"
+      >
         <div id="back-btn" class="me-3">←</div>
       </header>
 
       <!-- chatbox -->
       <div
-        id="chatbox-container" class="chatbox-custom-bg flex-grow-1 overflow-auto p-3 d-flex flex-column gap-2"
-      >
-      </div>
+        id="chatbox-container"
+        class="chatbox-custom-bg flex-grow-1 overflow-auto p-3 d-flex flex-column gap-2"
+      ></div>
 
       <!-- chat features -->
       <footer class="footer-custom p-2">
-
         <!-- chat flexbox-->
         <div class="d-flex align-items-center gap-2">
-
           <!-- photo icon-->
           <button id="camera-btn" class="icon-btn">
-            <img src="./images/chat_icons/camera.png" alt="Camera" class="icon-img" />
+            <img
+              src="./images/chat_icons/camera.png"
+              alt="Camera"
+              class="icon-img"
+            />
           </button>
 
           <!-- mic icon-->
           <button id="mic-btn" class="icon-btn">
-            <img src="./images/chat_icons/mic.png" alt="a mic" class="icon-img" />
+            <img
+              src="./images/chat_icons/mic.png"
+              alt="a mic"
+              class="icon-img"
+            />
           </button>
-          
+
           <!-- message box-->
           <input
             type="text"
@@ -50,10 +59,18 @@
 
           <!--send icon-->
           <button id="send-btn" class="icon-btn">
-            <img src="./images/chat_icons/send.png" alt="The button to submit message" class="icon-img"/>
+            <img
+              src="./images/chat_icons/send.png"
+              alt="The button to submit message"
+              class="icon-img"
+            />
           </button>
         </div>
       </footer>
+    </div>
+
+    <div class="home-footer">
+      <a href="index.html" class="home-button">Home</a>
     </div>
 
     <script type="module" src="./src/main.js"></script>

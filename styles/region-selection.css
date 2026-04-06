@@ -1,8 +1,20 @@
-body {
-    background-image: url("../images/chatboxBG.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+/* ─── Other pages (non-hero) ─── */
+/* Add this class to the <body> or wrapper on every non-hero page */
+.page-inner {
+    background-color: #0d1b2a;
+    color: #f0f4f8;
+    min-height: calc(100vh - 75px);
+    padding: 2rem 1.5rem;
+}
+
+/* Cards/sections on inner pages */
+.page-inner .card,
+.page-inner .panel {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.25rem;
+    color: #f0f4f8;
 }
 
 .background-custom {

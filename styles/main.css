@@ -5,8 +5,10 @@ body {
     min-height: 100vh;
 }
 
+/* ─── Header ─── */
 .header-custom {
     background-color: var(--secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .header {
@@ -14,6 +16,7 @@ body {
     z-index: 2;
 }
 
+/* ─── Hero section ─── */
 .hero-screen {
     position: relative;
     min-height: calc(100vh - 75px);
@@ -24,6 +27,10 @@ body {
     overflow: hidden;
 }
 
+/* 
+  Replace the src on this <img> in your HTML with a city lights photo.
+  Free options: https://unsplash.com/s/photos/city-lights-night
+*/
 .hero-bg-image {
     position: absolute;
     inset: 0;
@@ -31,16 +38,19 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: grayscale(100%) brightness(0.3) contrast(100%) saturate(0%);
+    /* removed grayscale — city lights need colour to look alive */
+    filter: brightness(0.45) contrast(105%) saturate(85%);
 }
 
+/* Dark navy tint overlay instead of pure black */
 .hero-screen::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.56);
+    background: rgba(10, 20, 50, 0.38);
 }
 
+/* ─── Hero content ─── */
 .hero-content {
     position: relative;
     z-index: 1;
@@ -64,19 +74,79 @@ body {
     line-height: 1.35;
     margin-left: auto;
     margin-right: auto;
+    color: rgba(255, 255, 255, 0.72);
 }
 
+/* ─── Find your squad CTA — animated ─── */
 .hero-cta {
+    position: relative;
     display: inline-block;
-    background: #f2f2f2;
-    color: #1a1a1a;
+    background: #ffffff;
+    color: #0d1b2a;
     text-decoration: none;
     font-size: 2rem;
-    border-radius: 12px;
-    padding: 0.35rem 1rem 0.5rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 14px;
+    padding: 0.45rem 1.4rem 0.6rem;
     margin-bottom: 2.6rem;
+    cursor: pointer;
+    overflow: visible;
+    /* pulsing scale + glow */
+    animation: pulse-glow 2.4s ease-in-out infinite;
 }
 
+/* Expanding ring around the button */
+.hero-cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    border: 2px solid rgba(96, 165, 250, 0.7);
+    animation: ring-expand 2.4s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(96, 165, 250, 0);
+    }
+
+    50% {
+        transform: scale(1.04);
+        box-shadow: 0 0 24px 6px rgba(96, 165, 250, 0.3);
+    }
+}
+
+@keyframes ring-expand {
+    0% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+
+    70% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+.hero-cta:hover {
+    background: #dbeafe;
+    transform: scale(1.06);
+    animation: none;
+    /* pause pulse on hover so it feels intentional */
+    box-shadow: 0 0 28px 8px rgba(96, 165, 250, 0.35);
+}
+
+/* ─── Stats ─── */
 .hero-stats {
     display: flex;
     flex-direction: column;
@@ -102,13 +172,15 @@ body {
     line-height: 1.1;
 }
 
+/* ─── Footer ─── */
 .app-footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
     padding: 0.45rem 0.25rem;
-    border-top: 1px solid rgba(48, 82, 82, 0.35);
+    background-color: var(--secondary);
+    border-top: 1px solid rgba(96, 165, 250, 0.2);
 }
 
 .footer-icon-link {
@@ -119,16 +191,17 @@ body {
     justify-content: center;
     gap: 0.15rem;
     text-decoration: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.75);
     min-height: 56px;
     font-size: 0.85rem;
     font-weight: 600;
+    transition: color 0.2s, background-color 0.2s;
 }
 
 .footer-icon-link:hover,
 .footer-icon-link:focus-visible {
     color: var(--accent);
-    background-color: rgba(183, 213, 212, 0.35);
+    background-color: rgba(96, 165, 250, 0.12);
 }
 
 .footer-icon-link:focus-visible {

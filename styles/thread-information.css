@@ -1,4 +1,4 @@
-/*
+/* 
 --light-text: #535353;
 --primary: #1f1f1f;
 --secondary: #2b2b2b;
@@ -50,6 +50,7 @@ div p {
     background-color: var(--secondary);
     border-radius: 5px;
 }
+
 .member-icon {
     width: 2rem;
 }
