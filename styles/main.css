@@ -66,15 +66,73 @@ body {
     margin-right: auto;
 }
 
+/* ─── Find your squad CTA — animated ─── */
 .hero-cta {
+    position: relative;
     display: inline-block;
-    background: #f2f2f2;
-    color: #1a1a1a;
+    background: #ffffff;
+    color: #0d1b2a;
     text-decoration: none;
     font-size: 2rem;
-    border-radius: 12px;
-    padding: 0.35rem 1rem 0.5rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 14px;
+    padding: 0.45rem 1.4rem 0.6rem;
     margin-bottom: 2.6rem;
+    cursor: pointer;
+    overflow: visible;
+    /* pulsing scale + glow */
+    animation: pulse-glow 2.4s ease-in-out infinite;
+}
+
+/* Expanding ring around the button */
+.hero-cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    border: 2px solid rgba(96, 165, 250, 0.7);
+    animation: ring-expand 2.4s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(96, 165, 250, 0);
+    }
+
+    50% {
+        transform: scale(1.04);
+        box-shadow: 0 0 24px 6px rgba(96, 165, 250, 0.3);
+    }
+}
+
+@keyframes ring-expand {
+    0% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+
+    70% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+.hero-cta:hover {
+    background: #dbeafe;
+    transform: scale(1.06);
+    animation: none;
+    /* pause pulse on hover so it feels intentional */
+    box-shadow: 0 0 28px 8px rgba(96, 165, 250, 0.35);
 }
 
 .hero-stats {
