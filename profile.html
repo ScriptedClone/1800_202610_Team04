@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>My BCIT Project</title>
+    <meta name="comp1800 template" content="My 1800 App" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles/profile.css" />
+  </head>
+
+  <body>
+    <header class="header header-custom">
+      <div
+        class="container-fluid d-flex text-white justify-content-center align-items-center"
+      >
+        <h1 class="display-4 my-3">FIFA SQUAD</h1>
+      </div>
+    </header>
+
+    <main class="d-flex flex-column align-items-center text-white flex-grow-1">
+      <section class="background-custom w-90 mx-auto mt-4 p-3">
+        <div class="roles-title">Your roles</div>
+        <div id="selected-threads" class="selected-threads" aria-live="polite">
+          <span class="empty-roles">No roles selected</span>
+        </div>
+      </section>
+
+      <div class="background-custom display-5 p-4 mt-4">
+        Select your threads
+      </div>
+
+      <div class="background-custom d-flex flex-column w-90 mx-auto p-3 mt-4 flex-grow-1">
+        <div class="thread-row">
+          <button class="thread-btn" data-thread="canada" aria-pressed="false" type="button">
+            <img src="./images/country_icons/canada.png" class="thread-img" alt="Canada thread" />
+            <span class="thread-label">Canada</span>
+            <span class="thread-status" aria-hidden="true">Subscribe</span>
+          </button>
+          <button class="thread-btn" data-thread="new-zealand" aria-pressed="false" type="button">
+            <img src="./images/country_icons/new-zealand.png" class="thread-img" alt="New Zealand thread" />
+            <span class="thread-label">New Zealand</span>
+            <span class="thread-status" aria-hidden="true">Subscribe</span>
+          </button>
+        </div>
+
+        <div class="thread-row">
+          <button class="thread-btn" data-thread="belgium" aria-pressed="false" type="button">
+            <img src="./images/country_icons/belgium.png" class="thread-img" alt="Belgium thread" />
+            <span class="thread-label">Belgium</span>
+            <span class="thread-status" aria-hidden="true">Subscribe</span>
+          </button>
+          <button class="thread-btn" data-thread="egypt" aria-pressed="false" type="button">
+            <img src="./images/country_icons/Egypt.png" class="thread-img" alt="Egypt thread" />
+            <span class="thread-label">Egypt</span>
+            <span class="thread-status" aria-hidden="true">Subscribe</span>
+          </button>
+        </div>
+
+        <div class="thread-row">
+          <button class="thread-btn" data-thread="qatar" aria-pressed="false" type="button">
+            <img src="./images/country_icons/qatar.png" class="thread-img" alt="Qatar thread" />
+            <span class="thread-label">Qatar</span>
+            <span class="thread-status" aria-hidden="true">Subscribe</span>
+          </button>
+          <button class="thread-btn" data-thread="switzerland" aria-pressed="false" type="button">
+            <img src="./images/country_icons/switzerland.png" class="thread-img" alt="Switzerland thread" />
+            <span class="thread-label">Switzerland</span>
+            <span class="thread-status" aria-hidden="true">Subscribe</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <site-navbar></site-navbar>
+
+    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/components/site-navbar.js"></script>
+    <script type="module" src="./src/profile.js"></script>
+  </body>
+</html>
