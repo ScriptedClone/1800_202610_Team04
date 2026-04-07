@@ -1,53 +1,11 @@
 import { db } from "/src/firebaseConfig.js";
 import { doc, collection, onSnapshot, getDocs, getDoc, addDoc, query, orderBy, limit } from "firebase/firestore";
 import {getUserObject} from "./authentication.js"
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap'; //must create js to export setVisibility function
+import { userFlag } from "./utilities.js";
 
 // helper functions
 function setVisible(el, visible) {
     el.classList.toggle('d-none', !visible);
-}
-
-function userFlag(userRegion, userGames){
-
-    let flag;
-
-    if (userRegion === "west") {
-
-        switch (userGames) {
-            case "CA-QA":
-                flag = "./images/country_icons/canada.png"
-                break;g
-            case "CA-SW":
-                flag = "./images/country_icons/canada.png"
-                break;
-            case "NZ-BG":
-                flag = "./images/country_icons/new-zealand.png"
-                break;
-            case "NZ-EG":
-                flag = "./images/country_icons/new-zealand.png"
-                break;
-        }
-    } else if (userRegion === "east") {
-
-        switch (userGames) {
-            case "CA-QA":
-                flag = "./images/country_icons/qatar.png"
-                break;
-            case "CA-SW":
-                flag = "./images/country_icons/switzerland.png"
-                break;
-            case "NZ-BG":
-                flag = "./images/country_icons/belgium.png"
-                break;
-            case "NZ-EG":
-                flag = "./images/country_icons/egypt.png"
-                break;
-        }
-    }
-    return flag;
 }
 // helper functions
 

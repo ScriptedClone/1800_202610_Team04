@@ -5,3 +5,4 @@ node_modules/
 .env
 skeleton.html
 garbage.js
+garbage/

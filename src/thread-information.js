@@ -1,43 +1,7 @@
 import { getUserObject } from "./authentication.js";
 import { db } from "./firebaseConfig.js";
 import { doc, getDoc } from "firebase/firestore";
-
-// Function to get flag based on user region and game
-function userFlag(userRegion, userGame) {
-  let flag;
-  if (userRegion === "west") {
-    switch (userGame) {
-      case "CA-QA":
-        flag = "./images/country_icons/canada.png";
-        break;
-      case "CA-SW":
-        flag = "./images/country_icons/canada.png";
-        break;
-      case "NZ-BG":
-        flag = "./images/country_icons/new-zealand.png";
-        break;
-      case "NZ-EG":
-        flag = "./images/country_icons/new-zealand.png";
-        break;
-    }
-  } else if (userRegion === "east") {
-    switch (userGame) {
-      case "CA-QA":
-        flag = "./images/country_icons/qatar.png";
-        break;
-      case "CA-SW":
-        flag = "./images/country_icons/switzerland.png";
-        break;
-      case "NZ-BG":
-        flag = "./images/country_icons/belgium.png";
-        break;
-      case "NZ-EG":
-        flag = "./images/country_icons/egypt.png";
-        break;
-    }
-  }
-  return flag;
-}
+import { userFlag } from "./utilities.js";
 
 // Function to get title based on game
 function getGameTitle(userGame) {
