@@ -122,7 +122,7 @@ const initializeSelections = async () => {
     currentUser.email?.split("@")[0] ||
     "User";
   if (profileGreeting) {
-    profileGreeting.textContent = `Hello ${greetingName}`;
+    profileGreeting.textContent = `${greetingName}`;
   }
 
   const userDoc = await getDoc(doc(db, "users", currentUser.uid));

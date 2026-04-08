@@ -22,14 +22,22 @@ body {
 }
 
 .country-btn img{
-  transition: transform 80ms ease;
+    transition: transform 80ms ease;
 }
 
 .country-btn:active img{
-  transform: scale(0.92);
+    transform: scale(0.92);
 }
 
 .country-btn:focus-visible img{
-  outline: 2px solid #000;
-  outline-offset: 4px;
+    outline: 2px solid #000;
+    outline-offset: 4px;
+}
+
+.country-name {
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }

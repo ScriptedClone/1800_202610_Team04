@@ -71,19 +71,40 @@ body {
 }
 
 .logout-btn {
-  width: 90%;
-  max-width: 22rem;
-  background: #ffffff;
-  color: #000000;
+  background: transparent;
   border: 0;
-  border-radius: 0.5rem;
-  padding: 0.8rem 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  padding: 0.25rem 0.5rem;
+
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+
+  cursor: pointer;
+}
+.logout-btn:hover {
+  text-decoration: underline;
+}
+
+.logout-btn:active {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .logout-btn:focus-visible {
-  outline: 2px solid #000;
+  outline: 2px solid currentColor;
   outline-offset: 3px;
+}
+
+#logout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 25rem;
+}
+
+#logout-img {
+  width: 1.5em;
+  height: 1.5em;
+  flex: 0 0 auto;
+  object-fit: contain;
 }
