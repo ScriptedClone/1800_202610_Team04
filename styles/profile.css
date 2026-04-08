@@ -1,0 +1,110 @@
+body {
+  background-image: url("../images/chatboxBG.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.background-custom {
+  background-color: var(--secondary);
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.thread-img {
+  height: 7rem;
+  width: 7rem;
+  object-fit: contain;
+}
+
+.thread-btn {
+  width: 45%;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.thread-btn,
+.thread-btn:hover,
+.thread-btn:focus-visible {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.thread-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.thread-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.thread-btn img {
+  transition: transform 80ms ease, filter 120ms ease;
+}
+
+.thread-btn:active img {
+  transform: scale(0.92);
+}
+
+.thread-btn:focus-visible img {
+  outline: 2px solid #000;
+  outline-offset: 4px;
+}
+
+.thread-btn.is-selected img {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.35));
+}
+
+.logout-btn {
+  background: transparent;
+  border: 0;
+  padding: 0.25rem 0.5rem;
+
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+
+  cursor: pointer;
+}
+.logout-btn:hover {
+  text-decoration: underline;
+}
+
+.logout-btn:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.logout-btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+#logout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 25rem;
+}
+
+#logout-img {
+  width: 1.5em;
+  height: 1.5em;
+  flex: 0 0 auto;
+  object-fit: contain;
+}

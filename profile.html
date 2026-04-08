@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>My BCIT Project</title>
+    <meta name="comp1800 template" content="My 1800 App" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles/profile.css" />
+  </head>
+
+  <body>
+    <header class="header header-custom">
+      <div
+        class="container-fluid d-flex text-white justify-content-center align-items-center"
+      >
+        <h1 id="profile-greeting" class="display-4 my-3"></h1>
+          <button
+          id="logout-btn"
+          type="button"
+          class="logout-btn"
+          style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); width: auto; max-width: none; margin: 0;"
+          >
+          <span>logout</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="d-flex flex-column align-items-center text-white flex-grow-1">
+      <div class="background-custom w-90 mx-auto p-3 mt-4 position-relative d-flex justify-content-center align-items-center">
+        <div class="display-5 text-center">Change your country</div>
+
+      </div>
+
+      <div class="background-custom d-flex flex-column w-90 mx-auto p-3 mt-4 flex-grow-1">
+        <div class="thread-row">
+          <button class="thread-btn" data-thread="canada" aria-pressed="false" type="button">
+            <img src="./images/country_icons/canada.png" class="thread-img" alt="Canada thread" />
+            <span class="thread-label">Canada</span>
+          </button>
+          <button class="thread-btn" data-thread="new-zealand" aria-pressed="false" type="button">
+            <img src="./images/country_icons/new-zealand.png" class="thread-img" alt="New Zealand thread" />
+            <span class="thread-label">New Zealand</span>
+          </button>
+        </div>
+
+        <div class="thread-row">
+          <button class="thread-btn" data-thread="belgium" aria-pressed="false" type="button">
+            <img src="./images/country_icons/belgium.png" class="thread-img" alt="Belgium thread" />
+            <span class="thread-label">Belgium</span>
+          </button>
+          <button class="thread-btn" data-thread="egypt" aria-pressed="false" type="button">
+            <img src="./images/country_icons/Egypt.png" class="thread-img" alt="Egypt thread" />
+            <span class="thread-label">Egypt</span>
+          </button>
+        </div>
+
+        <div class="thread-row">
+          <button class="thread-btn" data-thread="qatar" aria-pressed="false" type="button">
+            <img src="./images/country_icons/qatar.png" class="thread-img" alt="Qatar thread" />
+            <span class="thread-label">Qatar</span>
+          </button>
+          <button class="thread-btn" data-thread="switzerland" aria-pressed="false" type="button">
+            <img src="./images/country_icons/switzerland.png" class="thread-img" alt="Switzerland thread" />
+            <span class="thread-label">Switzerland</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <site-navbar></site-navbar>
+
+    <script type="module" src="./src/utilities.js"></script>
+    <script type="module" src="./src/components/site-navbar.js"></script>
+    <script type="module" src="./src/profile.js"></script>
+  </body>
+</html>
