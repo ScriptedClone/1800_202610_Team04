@@ -1,3 +1,9 @@
+// ./src/components/site-navbar.js
+// -------------------------------------------------------------
+// Generates footer navbar for each page that requires it. This function
+// is used on other-threads and profile page.
+// -------------------------------------------------------------
+
 class SiteNavbar extends HTMLElement {
   constructor() {
     super();

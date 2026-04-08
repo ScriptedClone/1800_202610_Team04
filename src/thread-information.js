@@ -1,4 +1,21 @@
-import { getUserObject } from "./authentication.js";
+// -------------------------------------------------------------
+// WORK IN PROGRESS.
+// -------------------------------------------------------------
+// This js file is for implementing features of thread-information.js
+// It is commented out due to being incomplete.
+// 
+// Complete features
+// - Render correct Flag according to current thread.
+// Incomplete features:
+// - Generate DOM for thread description and replace current
+// placeholder
+// - Extract members in this current thread and display them on
+// members list. 
+// -------------------------------------------------------------
+
+
+
+/*import { getUserObject } from "./authentication.js";
 import { db } from "./firebaseConfig.js";
 import { doc, getDoc } from "firebase/firestore";
 import { userFlag } from "./utilities.js";
@@ -51,4 +68,4 @@ async function updateThreadInfo() {
   }
 }
 
-updateThreadInfo();
+updateThreadInfo(); */

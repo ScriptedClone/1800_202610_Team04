@@ -3,23 +3,36 @@ import { doc, collection, onSnapshot, getDocs, getDoc, addDoc, query, orderBy, l
 import {getUserObject} from "./authentication.js"
 import { userFlag } from "./utilities.js";
 
-// helper functions
+// -------------------------------------------------------------
+// setVisible()
+// -------------------------------------------------------------
+// Used to toggle visiblity of an element to none.
+//
+// Usage:
+//   sendMessage();
+// -------------------------------------------------------------
 function setVisible(el, visible) {
     el.classList.toggle('d-none', !visible);
 }
-// helper functions
 
-//creates a subcollection if it doesn't exist yet.
+// -------------------------------------------------------------
+// seedThread()
+// -------------------------------------------------------------
+// Seeds a subcollecton if it doesn't exist yet in database by
+// generating a document.
+// 
+// The document only contains date of time it was created. 
+//
+// Usage:
+//   initThreadUI();
+// -------------------------------------------------------------
 async function seedThread(eventDocRef, userRegion) {
 
-    // returns a reference to a document inside a specified subcollection.
     const docRef = query(collection(eventDocRef, userRegion), limit(1));
     const doc = await getDocs(docRef);
 
-    //If the document does not exist, this means the subcollection does not exist.
     if (doc.empty){
 
-        //creates a subcollection with a document that seeds it.
         await addDoc(collection(eventDocRef, userRegion), {
             time: Date.now(),
         });
@@ -27,15 +40,17 @@ async function seedThread(eventDocRef, userRegion) {
     }
 }
 
-//responsible for logic and rendering content in header.
+// -------------------------------------------------------------
+// renderHeader()
+// -------------------------------------------------------------
+// Responsible for logic and rendering content in header.
+//
+// Usage:
+//   initThreadUI();
+// -------------------------------------------------------------
 async function renderHeader(eventDocRef, userGames, userRegion) {
 
-    //stores the header element as an object.
     const container = document.getElementById('header-container')
-
-    //extracts document inside event collection depending on 
-    //user selected game.
-    //the extracted document's field is stored inside eventData.
     const eventDoc = await getDoc(eventDocRef); 
     const eventData = eventDoc.data();
 
@@ -52,36 +67,50 @@ async function renderHeader(eventDocRef, userGames, userRegion) {
       <small>${eventData.time}</small>
     </button>
     `;
-
-    //Redirects user to thread-information using the header as a button.
+ 
+    // Redirects user to thread-information.html
+    //
+    // CODE IS COMMENTED OUT DUE TO IMPLEMENTATION OF 
+    // thread-information.html FEATURES ARE INCOMPLETE
+    /* 
     const threadInformationBtn = document.getElementById('thread-information-btn')
     threadInformationBtn?.addEventListener('click', (e) => {
         location.href = 'thread-information.html';
-    });
+    }); */
 
     const backBtn = document.getElementById('back-btn')
-    //const redirect = 'other-threads.html'
     backBtn?.addEventListener('click', (e) => {
         location.href = "other-threads.html";
     });
 
 }
 
+
+// -------------------------------------------------------------
+// renderRegionMessage()
+// -------------------------------------------------------------
+// Extracts documents from event sub collection in database. This
+// Documents represent user messages and is sorted by date before
+// being rendered on the page.
+//
+// When this function is called, OnSnapshot runs atleast once
+// to extract current documents.
+//
+// This function runs once again when a new message document is added
+// to the subcollection.
+//
+// Usage:
+//   initThreadUI();
+// -------------------------------------------------------------
 function renderRegionMessage(eventDocRef, userRegion, user) {
 
-    //stores a div element with the following ID as an object.
     const container = document.getElementById('chatbox-container');
 
-    //the query selects a subcollection inside the event document according to user's region.
-    //the query then sorts each documnent is sorted according to milliseconds since epoch.
-    //onSnapshot runs once to display message field of each document sorted by query.
-    //onSnapshot runs once again if a new document is added.
     onSnapshot(
         query(collection(eventDocRef, userRegion), orderBy("time", "asc")),
         (message) => {
             message.docChanges().forEach((newMessage) => {
 
-                //stores data of current document in the loop
                 const data = newMessage.doc.data();
                 
                 if (newMessage.type === "added") {
@@ -114,6 +143,26 @@ function renderRegionMessage(eventDocRef, userRegion, user) {
     );
 }
 
+
+// -------------------------------------------------------------
+// sendMessage()
+// -------------------------------------------------------------
+// Extracts text from an input field and sends this to the database
+// under the correct event subcollection.
+//
+// The data sent is a document containing details and the text
+// from the input as the message.
+//
+// These are the following fields in the document sent to firestore. 
+//
+// message: user's message from input element.
+// time: Creates a date object counting milliseconds since epoch. 
+// user: user's id.
+// name: user's name.
+//
+// Usage:
+//   initThreadUI();
+// -------------------------------------------------------------
 function sendMessage(eventDocRef, userRegion, userName, user) {
 
     const cameraBtn = document.getElementById('camera-btn')
@@ -147,8 +196,13 @@ function sendMessage(eventDocRef, userRegion, userName, user) {
     });
 }
 
+// -------------------------------------------------------------
+// initThreadUI()
+// -------------------------------------------------------------
+// Initializes the page by loading the current user's data
+// and calling the functions needed to render the UI.
+// -------------------------------------------------------------
 async function initThreadUI() {
-    
     //gets current user object from firebase
     const user = await getUserObject();
 
@@ -157,16 +211,12 @@ async function initThreadUI() {
     const userData = userDoc.data();
     const userName = userData.name;
     const userRegion = userData.region;  //ex: west
-
-    // this needs to be changed.
     const userGames = userData.games;
 
-
     if (userGames.length === 1){
-
         //gets a referece to document inside the events collection 
         //depending on what game the user selected.
-        const eventDocRef = doc(db, "events", userGames[0]);
+        const eventDocRef = doc(db, "events", userGames[0]); 
 
         seedThread(eventDocRef, userRegion);
         renderHeader(eventDocRef, userGames[0], userRegion);
@@ -174,9 +224,7 @@ async function initThreadUI() {
         sendMessage(eventDocRef, userRegion, userName, user);
 
     } else {
-
         const userGame = localStorage.getItem('selectedThread')
-
         const eventDocRef = doc(db, "events", userGame);
 
         seedThread(eventDocRef, userRegion);

@@ -3,16 +3,26 @@ import {getDoc, doc} from "firebase/firestore";
 import {getUserObject} from "./authentication.js"
 import { userFlag } from "./utilities.js";
 
+// -------------------------------------------------------------
+// renderUserThreads()
+// -------------------------------------------------------------
+// Gets the user's document from firestore and reads the games field
+// which contains the threads/matches[CA-QA, CA-SW]. These string are
+// used to get the correct document from the event collection.
+//
+// A list of matches are rendered to the page after getting the correct
+// fields from the document.
+//
+// Usage:
+//   initOtherThreadUI();
+// -------------------------------------------------------------
 async function renderUserThreads(userRegion, userGames) {
 
-    //userGame will be the current selected game while iterating through the array.
     for (const userGame of userGames) {
 
-        // gets the reference to a document with the value of userGame [ex: CA-QA]
         const eventDocRef = doc(db, "events", userGame); 
         const container = document.getElementById('threads-container');
         
-        //Reads the reference and stores it in eventDoc.
         const eventDoc = await getDoc(eventDocRef);
         const eventData = eventDoc.data();
         
@@ -34,8 +44,18 @@ async function renderUserThreads(userRegion, userGames) {
     }
 }
 
+// -------------------------------------------------------------
+// threadSelect()
+// -------------------------------------------------------------
+// Redirects user thread.html 
+//
+// An event listener is attached to the container holding each button
+// and listens to which child button is pressed.
+//
+// Usage:
+//   initOtherThreadUI();
+// -------------------------------------------------------------
 function threadSelect() {
-
     const container = document.getElementById('threads-container');
     const redirect = 'thread.html'
 
@@ -47,7 +67,8 @@ function threadSelect() {
         const button = e.target.closest("button");
 
         console.log(button.id);
-        //prevents the event executing when user clicks 
+
+        // prevents the event listener executing when user clicks 
         // anywhere inside the container.
         if (!button){
             return;
@@ -59,6 +80,13 @@ function threadSelect() {
     });
 }
 
+
+// -------------------------------------------------------------
+// initOtherThreadUI()
+// -------------------------------------------------------------
+// Initializes the page by loading the current user's thread data
+// and rendering the available threads with click handlers.
+// -------------------------------------------------------------
 async function initOtherThreadsUI(){
     
     //gets current user object from firebase
@@ -68,7 +96,7 @@ async function initOtherThreadsUI(){
     const userDoc = await getDoc(doc(db, "users", user.uid));
     const userData = userDoc.data();
     const userRegion = userData.region;  //ex: west
-    const userGames = userData.games;    //ex: this gives the games array from user document
+    const userGames = userData.games;    //ex: extracts games array [CA-QA, CQ-SW]
 
     renderUserThreads(userRegion, userGames);
     threadSelect();
