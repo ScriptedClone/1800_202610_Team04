@@ -1,3 +1,11 @@
+// src/firebaseConfig.js
+// ------------------------------------------------------------
+// Initializes the Firebase app and exports shared Authentication 
+// and Firestore instance so other modules can use Firebase without 
+// repeating setup code.
+// -------------------------------------------------------------
+
+
 import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
@@ -12,3 +20,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+

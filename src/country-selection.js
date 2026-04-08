@@ -2,6 +2,14 @@ import { db } from "/src/firebaseConfig.js";
 import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import {onAuthReady} from "./authentication.js"
 
+// -------------------------------------------------------------
+// regionSelect()
+// -------------------------------------------------------------
+// Sets the user's region depending on which country/flag they select
+// on country-selection.html 
+//
+// Matches related to this country are also written to the user's games
+// array in database/firestore.
 function regionSelect() {
 
     const canadaBtn = document.getElementById('canada-btn');

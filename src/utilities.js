@@ -2,12 +2,28 @@ import {
     onAuthReady
 } from "./authentication.js"
 
+// Imports Bootstrap styles and JavaScript so Bootstrap classes 
+// and interactive components work across the app.
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "../styles/root.css";
-import "../styles/header-footer.css"
 import 'bootstrap';
 
+// Imports root.css which is responsible for the application's 
+// color palette and header-footer.css which is responsible
+// for styling the header and footer.
+import "../styles/root.css";
+import "../styles/header-footer.css"
+
+
+
+// -------------------------------------------------------------
+// showName()
+// -------------------------------------------------------------
+// Returns the name of the user by extracting it from firebase.
+//
+// Usage:
+//  profile.js
+// -------------------------------------------------------------
 export function showName() {
       const nameElement = document.getElementById("name-goes-here");
 
@@ -20,6 +36,17 @@ export function showName() {
       });
 }
 
+
+// -------------------------------------------------------------
+// userFlag()
+// -------------------------------------------------------------
+// Returns a string that represents a file path to country images
+// depending on user's user region and games/matches.
+//
+// Usage:
+//  thread.js
+//  other-threads.js
+// -------------------------------------------------------------
 export function userFlag(userRegion, userGames){
 
     let flag;
