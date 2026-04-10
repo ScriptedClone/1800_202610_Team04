@@ -10,35 +10,35 @@ const profileGreeting = document.querySelector("#profile-greeting");
 // country config
 const COUNTRY_CONFIG = {
   canada: {
-    resolveRegion: (region) =>
-      region === "east" || region === "west" ? region : "west",
-    resolveGame: (region) => (region === "east" ? "CA-QA" : "CA-SW"),
+    resolveRegion: () => "west",
+    resolveGames: () => ["CA-QA", "CA-SW"],
   },
   "new-zealand": {
     resolveRegion: () => "west",
-    resolveGame: () => "NZ-BG",
+    resolveGames: () => ["NZ-EG", "NZ-BG"],
   },
   switzerland: {
     resolveRegion: () => "east",
-    resolveGame: () => "CA-SW",
+    resolveGames: () => ["CA-SW"],
   },
   egypt: {
     resolveRegion: () => "east",
-    resolveGame: () => "NZ-EG",
+    resolveGames: () => ["NZ-EG"],
   },
   belgium: {
     resolveRegion: () => "east",
-    resolveGame: () => "NZ-BG",
+    resolveGames: () => ["NZ-BG"],
   },
   qatar: {
     resolveRegion: () => "east",
-    resolveGame: () => "CA-QA",
+    resolveGames: () => ["CA-QA"],
   },
 };
 
 let currentUser = null;
 let currentRegion = "west";
-let selectedCode = null;
+let selectedGames = [];
+let selectedCountry = null;
 
 // takes a country and current region then figures out the final region and game
 const resolveCountrySelection = (country, region) => {
@@ -46,8 +46,34 @@ const resolveCountrySelection = (country, region) => {
   if (!config) return null;
 
   const nextRegion = config.resolveRegion(region);
-  const gameCode = config.resolveGame(nextRegion);
-  return { region: nextRegion, gameCode };
+  const games = config.resolveGames(nextRegion);
+  return { region: nextRegion, games };
+};
+
+const areGamesEqual = (firstGames, secondGames) => {
+  if (!Array.isArray(firstGames) || !Array.isArray(secondGames)) return false;
+  if (firstGames.length !== secondGames.length) return false;
+
+  const normalizedFirst = [...firstGames].sort();
+  const normalizedSecond = [...secondGames].sort();
+
+  return normalizedFirst.every((game, index) => game === normalizedSecond[index]);
+};
+
+// restores the country based on the same region + games logic as country-selection.js
+const getCountryFromSelection = (region, games) => {
+  if (!Array.isArray(games) || games.length === 0) return null;
+
+  return (
+    Object.keys(COUNTRY_CONFIG).find((country) => {
+      const selection = resolveCountrySelection(country, region);
+      return (
+        selection &&
+        selection.region === region &&
+        areGamesEqual(selection.games, games)
+      );
+    }) || null
+  );
 };
 
 // saves the users selection to firestore
@@ -57,7 +83,7 @@ const saveCountrySelection = async (uid, country, region) => {
 
   await updateDoc(doc(db, "users", uid), {
     region: selection.region,
-    games: [selection.gameCode],
+    games: selection.games,
   });
 
   return selection;
@@ -73,8 +99,7 @@ const setButtonState = (button, isSelected) => {
 const applySelectionState = () => {
   threadButtons.forEach((button) => {
     const country = button.dataset.thread;
-    const selection = resolveCountrySelection(country, currentRegion);
-    const isSelected = !!selection && selection.gameCode === selectedCode;
+    const isSelected = country === selectedCountry;
     setButtonState(button, isSelected);
   });
 };
@@ -85,13 +110,15 @@ const selectCountry = async (country) => {
 
   // save old values as a fail safe
   const previousRegion = currentRegion;
-  const previousCode = selectedCode;
+  const previousGames = [...selectedGames];
+  const previousCountry = selectedCountry;
 
   const nextSelection = resolveCountrySelection(country, currentRegion);
   if (!nextSelection) return;
 
   currentRegion = nextSelection.region;
-  selectedCode = nextSelection.gameCode;
+  selectedGames = [...nextSelection.games];
+  selectedCountry = country;
   applySelectionState();
 
   try {
@@ -99,12 +126,14 @@ const selectCountry = async (country) => {
     const persisted = await saveCountrySelection(currentUser.uid, country, previousRegion);
     if (!persisted) throw new Error("Could not resolve country selection");
     currentRegion = persisted.region;
-    selectedCode = persisted.gameCode;
+    selectedGames = [...persisted.games];
+    selectedCountry = country;
     applySelectionState();
   } catch (error) {
     // error handling
     currentRegion = previousRegion;
-    selectedCode = previousCode;
+    selectedGames = previousGames;
+    selectedCountry = previousCountry;
     applySelectionState();
     console.error("Failed to update games array:", error);
     alert("Could not update your roles. Please try again.");
@@ -131,8 +160,8 @@ const initializeSelections = async () => {
     const data = userDoc.data();
     currentRegion =
       data.region === "east" || data.region === "west" ? data.region : "west";
-    const games = Array.isArray(data.games) ? data.games : [];
-    selectedCode = games[0] || null;
+    selectedGames = Array.isArray(data.games) ? data.games : [];
+    selectedCountry = getCountryFromSelection(currentRegion, selectedGames);
   }
 
   applySelectionState();
