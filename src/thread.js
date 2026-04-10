@@ -120,7 +120,7 @@ function renderRegionMessage(eventDocRef, userRegion, user) {
                         if (user.uid == data.user) {
                             container.innerHTML += `
                             <div class="d-flex flex-row-reverse gap-3 align-items-center">
-                                <img src="./images/account.png" class="chat-icon" />
+                                <img src="/images/account.png" class="chat-icon" />
                                 <p class="chat-bubble">${data.message}</p>
                             </div>
                             `;
@@ -128,7 +128,7 @@ function renderRegionMessage(eventDocRef, userRegion, user) {
                         } else {
                             container.innerHTML += `
                             <div class="d-flex justify-content-start gap-3 align-items-center">
-                                <img src="./images/account.png" class="chat-icon" />
+                                <img src="/images/account.png" class="chat-icon" />
                                 <div class="chat-bubble">
                                 <small>${data.name}</small>
                                 <p class="mb-0">${data.message}</p>

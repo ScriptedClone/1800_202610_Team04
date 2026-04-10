@@ -1,17 +1,4 @@
-// ./src/components/site-navbar.js
-// -------------------------------------------------------------
-// Generates footer navbar for each page that requires it. This function
-// is used on other-threads and profile page.
-// -------------------------------------------------------------
-
-class SiteNavbar extends HTMLElement {
-  constructor() {
-    super();
-    this.renderNavbar();
-  }
-
-  renderNavbar() {
-    this.innerHTML = `
+class a extends HTMLElement{constructor(){super(),this.renderNavbar()}renderNavbar(){this.innerHTML=`
     <!--Footer Icons and Buttons-->
     <div class="fixed-bottom">
             <footer class="app-footer header-custom">
@@ -29,8 +16,4 @@ class SiteNavbar extends HTMLElement {
                 </a>
             </footer>
     </div>
-    `;
-  }
-}
-
-customElements.define("site-navbar", SiteNavbar);
+    `}}customElements.define("site-navbar",a);

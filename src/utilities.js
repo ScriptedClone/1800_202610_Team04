@@ -55,32 +55,32 @@ export function userFlag(userRegion, userGames){
 
         switch (userGames) {
             case "CA-QA":
-                flag = "./images/country_icons/canada.png"
+                flag = "/images/country_icons/canada.png"
                 break;g
             case "CA-SW":
-                flag = "./images/country_icons/canada.png"
+                flag = "/images/country_icons/canada.png"
                 break;
             case "NZ-BG":
-                flag = "./images/country_icons/new-zealand.png"
+                flag = "/images/country_icons/new-zealand.png"
                 break;
             case "NZ-EG":
-                flag = "./images/country_icons/new-zealand.png"
+                flag = "/images/country_icons/new-zealand.png"
                 break;
         }
     } else if (userRegion === "east") {
 
         switch (userGames) {
             case "CA-QA":
-                flag = "./images/country_icons/qatar.png"
+                flag = "/images/country_icons/qatar.png"
                 break;
             case "CA-SW":
-                flag = "./images/country_icons/switzerland.png"
+                flag = "/images/country_icons/switzerland.png"
                 break;
             case "NZ-BG":
-                flag = "./images/country_icons/belgium.png"
+                flag = "/images/country_icons/belgium.png"
                 break;
             case "NZ-EG":
-                flag = "./images/country_icons/egypt.png"
+                flag = "/images/country_icons/egypt.png"
                 break;
         }
     }
