@@ -1,27 +1,25 @@
-# Elmo Hikes
+# FIFA Squad
 
 
 ## Overview
-Elmo Hikes is a client-side JavaScript web application that helps users discover and explore hiking trails. The app displays a curated list of hike trails, each with details such as name, location, difficulty, and an image. Users can browse the list and mark their favorite trails for easy access later.
+With the FIFA World Cup approaching, tourists from around the world will be traveling to Vancouver. While attending matches is exciting, visitors traveling alone can feel isolated in an unfamiliar environment. To address this, our team (BBY-04) developed FIFA Squad, a web app that helps solo tourists connect with other supporters from their country who are attending the same matches.
 
-Developed for the COMP 1800 course, this project applies User-Centred Design practices and agile project management, and demonstrates integration with Firebase backend services for storing user favorites.
+After creating an account, users are placed into chat groups (“threads”) based on their selected country, where they can join conversations and meet others. Overall, FIFA Squad aims to reduce isolation and foster a sense of community during the World Cup.
 
 ---
 
 
 ## Features
 
-- Browse a list of curated hiking trails with images and details
-- Mark and unmark trails as favorites
-- View a personalized list of favorite hikes
-- Responsive design for desktop and mobile
+- Chat with other fans from your country who are attending the same match.
+- Switch between match threads to meet more people.
 
 ---
 
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript
+- **Frontend**: HTML, CSS, JavaScript, [Bootstrap](https://getbootstrap.com/)
 - **Build Tool**: [Vite](https://vitejs.dev/)
 - **Backend**: Firebase for hosting
 - **Database**: Firestore
@@ -40,9 +38,10 @@ To run the application locally:
 
 Once the application is running:
 
-1.  Browse the list of hiking trails displayed on the main page.
-2.  Click the heart icon (or similar) to mark a trail as a favorite.
-3.  View your favorite hikes in the favorites section.
+1.  Click "Find your squad" on the landing page to be redirected to login/signup page.
+2.  Create your account for the first time.
+3.  Select your country during the sign-up process.
+4.  Enter a thread and send a message! 
 
 ---
 
@@ -50,16 +49,42 @@ Once the application is running:
 ## Project Structure
 
 ```
-elmo-hikes/
+fifa-squad/
 ├── src/
-│   ├── main.js
+│   ├── authentication.js
+│   ├── country-selection.js
+│   ├── firebaseConfig.js
+│   ├── loginSignup.js
+│   ├── other-threads.js
+│   ├── profile.js
+│   ├── thread-information.js
+│   ├── thread.js
+│   ├── utilities.js
+│   └── components/
+│       └── site-navbar.js
 ├── styles/
-│   └── style.css
+│   ├── root.css
+│   ├── header-footer.css
+│   ├── index.css
+│   ├── login.css
+│   ├── country-selection.css
+│   ├── other-threads.css
+│   ├── profile.css
+│   ├── thread-information.css
+│   └── thread.css
 ├── public/
-├── images/
+│   └── images/
+│       ├── country_icons/
+│       └── chat_icons/
 ├── index.html
+├── login.html
+├── country-selection.html
+├── other-threads.html
+├── profile.html
+├── thread.html
+├── thread-information.html
 ├── package.json
-├── README.md
+└── README.md
 ```
 
 ---
@@ -72,9 +97,9 @@ elmo-hikes/
 
 ## Acknowledgments
 
-- Trail data and images are for demonstration purposes only.
+- Images are for demonstration purposes only.
 - Code snippets were adapted from resources such as [Stack Overflow](https://stackoverflow.com/) and [MDN Web Docs](https://developer.mozilla.org/).
-- Icons sourced from [FontAwesome](https://fontawesome.com/) and images from [Unsplash](https://unsplash.com/).
+- Icons and images sourced from [flaticon](https://www.flaticon.com/).
 
 ---
 
@@ -82,14 +107,16 @@ elmo-hikes/
 ## Limitations and Future Work
 ### Limitations
 
-- Limited trail details (e.g., no live trail conditions).
-- Accessibility features can be further improved.
+- Limited user to user interaction outside of threads
+- Country selection only includes Canada, New-Zealand, Egypt, Qatar, Belgium, and Switzerland.
+- Accessibility features can be improved.
 
 ### Future Work
 
-- Implement map view and trailhead directions.
-- Add filtering and sorting options (e.g., by difficulty, distance).
-- Create a dark mode for better usability in low-light conditions.
+- Add profile personalization (profile photo, bio, custom username) beyond changing the selected country.
+- Implement full functionality for the Thread Information page (replace placeholders).
+- Implement error and exception handling throughout the app.
+- Add direct messaging between users.
 
 ---
 

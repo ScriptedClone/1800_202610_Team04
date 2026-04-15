@@ -56,7 +56,7 @@ export function userFlag(userRegion, userGames){
         switch (userGames) {
             case "CA-QA":
                 flag = "/images/country_icons/canada.png"
-                break;g
+                break;
             case "CA-SW":
                 flag = "/images/country_icons/canada.png"
                 break;
